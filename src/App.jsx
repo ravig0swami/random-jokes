@@ -9,7 +9,7 @@ const App = () => {
     try {
       // Fetch data from the joke API
       const response = await fetch(
-        "https://official-joke-api.appspot.com/random_joke"
+        "https://official-joke-api.appspot.com/random_joke",
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -54,7 +54,7 @@ const App = () => {
           onClick={getJoke}
           className="bg-[#334D65] text-white font-normal py-3 px-6 rounded-lg active:scale-90 cursor-pointer w-auto sm:w-[200px] md:w-[350px] mt-4"
         >
-          Tell me a joke
+          {joke ? "Another One" : "Tell me a joke"}
         </button>
       </div>
       {/* Footer section with credits */}
